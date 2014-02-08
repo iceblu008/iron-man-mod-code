@@ -1,1 +1,208 @@
-All the item code
+//mainclass
+package modding.ironman; //Package directory
+/*
+* Basic importing
+*/
+import ironmanitems.JARVISchip;
+import ironmanitems.booster;
+import ironmanitems.copperwire;
+import ironmanitems.goldtitaniumalloy;
+import ironmanitems.microchip;
+import ironmanitems.palladiumfragment;
+import ironmanitems.screen;
+import ironmanitems.titaniumplate;
+import ironmanitems.vibraniumcore;
+import ironmanitems.vibraniummolecole;
+import ironmanitems.voicechip;
+import net.minecraft.block.Block;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+/*
+* Basic needed forge stuff
+*/
+@Mod(modid="IronManmod",name="IronManmod",version="v1")
+@NetworkMod(clientSideRequired=true,serverSideRequired=false)
+public class mainclass {
+/*
+* ToolMaterial
+*/
+//Telling forge that we are creating these
+//items armor
+    public static Item Mark6Chestplate;
+    public static Item Mark6Boots;
+    public static Item Mark6Leggings;
+    public static Item Mark6Helmet;
+    public static Item Mark2Chestplate;
+    public static Item Mark2Boots;
+    public static Item Mark2Leggings;
+    public static Item Mark2Helmet;
+//items
+    public static Item titaniumingot;
+    public static Item copperingot;
+    public static Item palladiumfragment;
+    public static Item goldtitaniumalloy;
+    public static Item copperwire;
+    public static Item voicechip;
+    public static Item microchip;
+    public static Item JARVISchip;
+    public static Item vibraniummolecule;
+    public static Item screen;
+    public static Item titaniumplate;
+    public static Item booster;
+    public static Item palladiumcore;
+    public static Item vibraniumcore;
+    public static Item palladiumarc;
+    public static Item vibraniumarc;
+    public static Item advancedbooster;
+    public static Item ironplate;
+    public static Item titaniumalloy;
+    public static Item rocket;
+//armor
+    public static EnumArmorMaterial Mark6Armor = EnumHelper.addArmorMaterial("Mark 6", 8, new int[] { 3, 7, 6, 3 }, 30);
+    public static EnumArmorMaterial Mark2Armor = EnumHelper.addArmorMaterial("Mark 2", 8, new int[] { 3, 7, 6, 3 }, 30);
+    //blocks
+    public static Block titaniumore;
+    public static Block copperore;
+    public static Block palladiumore;
+    public static Block vibraniumore;
+
+//tools
+
+//Declaring Init
+@Init
+public void load(FMLInitializationEvent event){
+// define items
+    titaniumingot = new titaniumingot(2000).setUnlocalizedName("titaniumingot");
+    copperingot = new copperingot(2008).setUnlocalizedName("copperingot");
+    palladiumfragment = new palladiumfragment(2010).setUnlocalizedName("palladiumfragment");
+    goldtitaniumalloy = new goldtitaniumalloy(2011).setUnlocalizedName("goldtitaniumalloy");
+    copperwire = new copperwire(2012).setUnlocalizedName("copperwire");
+    voicechip = new voicechip(2013).setUnlocalizedName("voicechip");
+    microchip = new microchip(2014).setUnlocalizedName("microchip");
+    JARVISchip = new JARVISchip(2015).setUnlocalizedName("JARVISchip");
+    vibraniummolecule = new vibraniummolecole(2017).setUnlocalizedName("vibraniummolecole");
+    screen = new screen(2017).setUnlocalizedName("screen");
+    titaniumplate = new titaniumplate(2018).setUnlocalizedName("titaniumplate");
+    booster = new booster(2018).setUnlocalizedName("booster");
+    vibraniumcore = new vibraniumcore(2019).setUnlocalizedName("vibraniumcore");
+    palladiumcore = new palladiumcore(2020).setUnlocalizedName("palladiumcore");
+    palladiumarc = new palladiumarc(2021).setUnlocalizedName("palladiumarc");
+    vibraniumarc = new vibraniumarc(2022).setUnlocalizedName("vibraniumarc");
+    advancedbooster = new advancedbooster(2023).setUnlocalizedName("advancedbooster");
+    ironplate = new ironplate(2024).setUnlocalizedName("ironplate");
+    titaniumalloy = new titaniumalloy(2025).setUnlocalizedName("titaniumalloy");
+    rocket = new rocket(2026).setUnlocalizedName("rocket");
+//render
+    RenderingRegistry.addNewArmourRendererPrefix("Mark6Armor");
+    RenderingRegistry.addNewArmourRendererPrefix("Mark2Armor");
+
+//define armor
+    Mark6Helmet = new Mark6Armor(2001, Mark6Armor, 5, 0).setUnlocalizedName("Mark6Helmet");
+    Mark6Chestplate = new Mark6Armor(2002, Mark6Armor, 5, 1).setUnlocalizedName("Mark6Chestplate");
+    Mark6Leggings = new Mark6Armor(2003, Mark6Armor, 5, 2).setUnlocalizedName("Mark6Leggings");
+    Mark6Boots = new Mark6Armor(2004, Mark6Armor, 5, 3).setUnlocalizedName("Mark6Boots");
+    
+    Mark2Helmet = new Mark2Armor(2027, Mark2Armor, 5, 0).setUnlocalizedName("Mark2Helmet");
+    Mark2Chestplate = new Mark2Armor(2028, Mark2Armor, 5, 1).setUnlocalizedName("Mark2Chestplate");
+    Mark2Leggings = new Mark2Armor(2029, Mark2Armor, 5, 2).setUnlocalizedName("Mark2Leggings");
+    Mark2Boots = new Mark2Armor(2030, Mark2Armor, 5, 3).setUnlocalizedName("Mark2Boots");
+// define blocks
+    titaniumore = new titaniumore(2006, "titaniumore").setUnlocalizedName("titaniumore").setHardness(3.0F).setStepSound(Block.soundMetalFootstep).setResistance(5.0F);
+    GameRegistry.registerBlock(titaniumore, "titaniumore");
+    copperore = new copperore(2007, "copperore").setUnlocalizedName("copperore").setHardness(3.0F).setStepSound(Block.soundMetalFootstep).setResistance(5.0F);
+    GameRegistry.registerBlock(copperore, "copperore");
+    palladiumore = new palladiumore(2009, "paladiumore").setUnlocalizedName("palladiumore").setHardness(3.0F).setStepSound(Block.soundMetalFootstep).setResistance(5.0F);
+    GameRegistry.registerBlock(palladiumore, "palladiumore");
+    vibraniumore = new vibraniumore(2016, "vibraniumore").setUnlocalizedName("vibraniumore").setHardness(3.0F).setStepSound(Block.soundMetalFootstep).setResistance(5.0F);
+    GameRegistry.registerBlock(vibraniumore, "vibraniumore");
+    //world generation
+    GameRegistry.registerWorldGenerator(new WorldGeneratorIce());
+    
+//adding names
+    LanguageRegistry.addName(titaniumore, "Titanium Ore");
+    LanguageRegistry.addName(Mark6Helmet, "Mark6 Helmet");
+    LanguageRegistry.addName(Mark6Chestplate, "Mark6 Chestplate");
+    LanguageRegistry.addName(Mark6Boots, "Mark6 Boots");
+    LanguageRegistry.addName(Mark6Leggings, "Mark6 Leggings");
+    LanguageRegistry.addName(titaniumingot, "Titanium Ingot");
+    LanguageRegistry.addName(copperore, "Copper Ore");
+    LanguageRegistry.addName(copperingot, "Copper Ingot");
+    LanguageRegistry.addName(palladiumore, "Palladium Ore");
+    LanguageRegistry.addName(palladiumfragment, "Palladium Fragment");
+    LanguageRegistry.addName(goldtitaniumalloy, "Gold-Titanium Alloy");
+    LanguageRegistry.addName(copperwire, "Copper Wire");
+    LanguageRegistry.addName(voicechip, "Voice Chip");
+    LanguageRegistry.addName(microchip, "Micro Chip");
+    LanguageRegistry.addName(JARVISchip, "J.A.R.V.I.S Chip");
+    LanguageRegistry.addName(vibraniumore, "Vibranium Ore");
+    LanguageRegistry.addName(vibraniummolecule, "Vibranium Molecule");
+    LanguageRegistry.addName(screen, "Screen");
+    LanguageRegistry.addName(titaniumplate, "Titanium Plate");
+    LanguageRegistry.addName(booster, "Booster");
+    LanguageRegistry.addName(palladiumcore, "Palladium Core");
+    LanguageRegistry.addName(vibraniumcore, "Vibranium Core");
+    LanguageRegistry.addName(palladiumarc, "Palladium Arc Reactor");
+    LanguageRegistry.addName(vibraniumarc, "Vibranium Arc Reactor");
+    LanguageRegistry.addName(advancedbooster, "Advanced Booster");
+    LanguageRegistry.addName(ironplate, "Iron Plate");
+//itemso
+
+//blocks
+    
+//crafting
+    GameRegistry.addRecipe(new ItemStack(goldtitaniumalloy,4), new Object[]{
+        "GGG","GTG","GGG",'G',Item.ingotGold,'T',titaniumingot
+    });
+    GameRegistry.addRecipe(new ItemStack(copperwire,2), new Object[]{
+        "   ","CCC","   ",'C',copperingot,
+            });
+    GameRegistry.addRecipe(new ItemStack(microchip,1), new Object[]{
+        "III","CCC","III",'C',copperwire,'I',Item.ingotIron
+            });
+    GameRegistry.addRecipe(new ItemStack(voicechip,1), new Object[]{
+        "CCC","IMI","CCC",'C',copperwire,'I',Item.ingotIron,'M',microchip
+            });
+    GameRegistry.addRecipe(new ItemStack(JARVISchip,1), new Object[]{
+        "CCC","IVI","CCC",'C',copperwire,'I',Item.ingotIron,'V',voicechip,
+            });
+    GameRegistry.addRecipe(new ItemStack(screen,1), new Object[]{
+        "GGG","GGG","GGG",'G',Block.glass,
+            });
+    GameRegistry.addRecipe(new ItemStack(booster,1), new Object[]{
+        "   ","FTF","   ",'F',Item.flintAndSteel,'T',titaniumingot
+            });
+    GameRegistry.addRecipe(new ItemStack(palladiumcore,1), new Object[]{
+        "FFF","FFF","FFF",'F',palladiumfragment
+            });
+    GameRegistry.addRecipe(new ItemStack(vibraniumcore,1), new Object[]{
+        "VVV","VVV","VVV",'V',vibraniummolecule
+            });
+    GameRegistry.addRecipe(new ItemStack(vibraniumarc,1), new Object[]{
+        "VVV","VAV","VVV",'V',vibraniummolecule,'A',vibraniumcore
+            });
+    GameRegistry.addRecipe(new ItemStack(palladiumarc,1), new Object[]{
+        "FFF","FPF","FFF",'F',palladiumfragment,'P',palladiumcore
+            });
+    GameRegistry.addRecipe(new ItemStack(advancedbooster,1), new Object[]{
+        "   ","FTF","C C",'F',Item.flintAndSteel,'T',titaniumingot,'C',copperwire
+            });
+    //smelting
+        GameRegistry.addSmelting(mainclass.titaniumore.blockID, new ItemStack(titaniumingot, 1), 5F);
+        GameRegistry.addSmelting(mainclass.copperore.blockID, new ItemStack(copperingot, 1), 5F);
+        GameRegistry.addSmelting(mainclass.vibraniumore.blockID, new ItemStack(vibraniummolecule, 1), 5F);
+}
+}
+
