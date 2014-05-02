@@ -6,42 +6,42 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
-public class Mark6Armor extends ItemArmor {
+public class Mark3Armor extends ItemArmor {
     
     
-    public Mark6Armor(int par1, EnumArmorMaterial par2EnumArmorMaterial,
+    public Mark3Armor(int par1, EnumArmorMaterial par2EnumArmorMaterial,
 int par3, int par4) {
 super(par1, par2EnumArmorMaterial, par3, par4);
 }
 public String getArmorTexture(ItemStack stack, Entity entity, int slot,
 int layer) {
-if (stack.itemID == mainclass.Mark6Helmet.itemID
-|| stack.itemID == mainclass.Mark6Chestplate.itemID
-|| stack.itemID == mainclass.Mark6Boots.itemID) {
-return "minecraft:textures/armor/mk6_1.png";
+if (stack.itemID == mainclass.Mark3Helmet.itemID
+|| stack.itemID == mainclass.Mark3Chestplate.itemID
+|| stack.itemID == mainclass.Mark3Boots.itemID) {
+return "minecraft:textures/armor/mk3_1.png";
 }
-if (stack.itemID == mainclass.Mark6Leggings.itemID) {
-return "minecraft:textures/armor/mk6_2.png";
+if (stack.itemID == mainclass.Mark3Leggings.itemID) {
+return "minecraft:textures/armor/mk3_2.png";
 } else {
 return null;
 }
 
 }
 public void registerIcons(IconRegister reg) { // Make sure to import IconRegister!
-if (itemID == mainclass.Mark6Chestplate.itemID) {
-this.itemIcon = reg.registerIcon("Mark6Chestplate"); // You can also replace blockID and blockIcon with itemID and itemIcon
+if (itemID == mainclass.Mark3Chestplate.itemID) {
+this.itemIcon = reg.registerIcon("Mark3Chestplate"); // You can also replace blockID and blockIcon with itemID and itemIcon
 }
 
-if (itemID == mainclass.Mark6Leggings.itemID) {
-this.itemIcon = reg.registerIcon("Mark6Pants"); // You can also replace blockID and blockIcon with itemID and itemIcon
+if (itemID == mainclass.Mark3Leggings.itemID) {
+this.itemIcon = reg.registerIcon("Mark3Pants"); // You can also replace blockID and blockIcon with itemID and itemIcon
 }
 
-if (itemID == mainclass.Mark6Boots.itemID) {
-this.itemIcon = reg.registerIcon("Mark6Boots"); // You can also replace blockID and blockIcon with itemID and itemIcon
+if (itemID == mainclass.Mark3Boots.itemID) {
+this.itemIcon = reg.registerIcon("Mark3Boots"); // You can also replace blockID and blockIcon with itemID and itemIcon
 }
 
-if (itemID == mainclass.Mark6Helmet.itemID) {
-this.itemIcon = reg.registerIcon("Mark6Helmet"); // You can also replace blockID and blockIcon with itemID and itemIcon
+if (itemID == mainclass.Mark3Helmet.itemID) {
+this.itemIcon = reg.registerIcon("Mark3Helmet"); // You can also replace blockID and blockIcon with itemID and itemIcon
 }
 
 }
